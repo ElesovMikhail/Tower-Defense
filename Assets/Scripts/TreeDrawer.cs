@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 [ExecuteAlways]
 public class TreeDrawer : MonoBehaviour // компонент для отрисовки моделек деревьев

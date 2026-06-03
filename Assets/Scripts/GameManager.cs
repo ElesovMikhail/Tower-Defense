@@ -78,6 +78,8 @@ public class GameManager : MonoBehaviour // компонент, отвечающий за игровую лог
     [SerializeField] GameObject PausePanel; // панель дл€ паузы
     [SerializeField] GameObject EndPanel; // конечна€ панель
     [Space]
+    [SerializeField] GameObject NextLevelButton; // кнопка дл€ перехода на следующий уровень
+    [Space]
     [Space]
     // UI виджеты дл€ настроек
     [SerializeField] private Slider MusicSlider;
@@ -213,13 +215,13 @@ public class GameManager : MonoBehaviour // компонент, отвечающий за игровую лог
     void APV()
     {
         ActiveEndPanel("ѕобеда");
-        EndPanel.transform.GetChild(3).gameObject.SetActive(true);
+        if (NextLevelButton != null) NextLevelButton.SetActive(true);
     }
 
     void APGO()
     {
         ActiveEndPanel("<color=red>ѕоражение</color>");
-        EndPanel.transform.GetChild(3).gameObject.SetActive(false);
+        if (NextLevelButton != null) NextLevelButton.SetActive(false);
     }
 
     void ActiveEndPanel(string Value) // по€вление конечной панели

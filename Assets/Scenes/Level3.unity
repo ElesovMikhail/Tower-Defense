@@ -10482,6 +10482,7 @@ MonoBehaviour:
   GamePanel: {fileID: 1418849077}
   PausePanel: {fileID: 732543781}
   EndPanel: {fileID: 1097540220}
+  NextLevelButton: {fileID: 1428439911}
   MusicSlider: {fileID: 1662634332}
   SoundSlider: {fileID: 1340539652}
   FullScreenToogle: {fileID: 1098067310}
