@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour // компонент для всего главного меню и его
 
     private void Start()
     {
-        Application.targetFrameRate = FPSCount;
+        Application.targetFrameRate = FPSCount; // ограничение кадров
 
         LoadSettings();
         LoadGameData();
@@ -62,7 +62,7 @@ public class MainMenu : MonoBehaviour // компонент для всего главного меню и его
                 SoundSource.PlayOneShot(PressClip);
                 LevelIndex = Array.IndexOf(LevelMarks, Hit.collider.gameObject) + 1;
                 LevelText.text = $"уровень {LevelIndex}";
-                if (LevelIndex == LevelMarks.Length)
+                if (LevelIndex == LevelMarks.Length) // если выбрали последнюю метку в списке (метку уровня аркадного режима), появляется соответствующая надпись и рекорд, если имеется
                 {
                     LevelMarks[^1].transform.GetChild(0).gameObject.SetActive(false);
                     LevelText.text = $"аркадный режим";

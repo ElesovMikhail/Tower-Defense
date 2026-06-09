@@ -10450,7 +10450,7 @@ MonoBehaviour:
   MaxFood: 0
   CurrentFood: 0
   HasHorses: 1
-  BeginDelay: 4
+  BeginDelay: 10
   FlyingUnit: {fileID: 0}
   SelectedBuilding: {fileID: 0}
   GridSize: {x: 80, y: 80}

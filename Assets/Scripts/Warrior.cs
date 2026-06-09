@@ -76,6 +76,7 @@ public class Warrior : MonoBehaviour // компонент для юнитов ближнего боя - пехо
         {
             LookToEnemy(); // поворот в сторону противника
             Agent.SetDestination(ClosestEnemy.transform.position); // сокращение дистанции спротивником
+            //if (Vector3.Distance(transform.position, ClosestEnemy.transform.position) <= AttackRadius)
             if (Physics.CheckSphere(transform.position, AttackRadius, EnemyLayer)) // когда дистанция сократилась до радиуса атаки, юнит останавливается и атакует
             {
                 //Debug.Log("Дошёл");
@@ -132,6 +133,13 @@ public class Warrior : MonoBehaviour // компонент для юнитов ближнего боя - пехо
         if (ClosestEnemy == null)
         {
             IsAttacking = false;
+            return;
+        }
+        //if (Vector3.Distance(transform.position, ClosestEnemy.transform.position) > AttackRadius)
+        if (!Physics.CheckSphere(transform.position, AttackRadius, EnemyLayer))
+        {
+            IsAttacking = false;
+            Debug.Log("Противник слишком далеко");
             return;
         }
         ClosestEnemy.GetComponent<IDamageble>().GetDamage(Damage);

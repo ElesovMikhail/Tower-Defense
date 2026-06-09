@@ -81,6 +81,7 @@ public class Shooter : MonoBehaviour // компонент дл€ стрелков-лучников; как вра
         {
             LookToEnemy();
             Agent.SetDestination(ClosestEnemy.transform.position);
+            //if (Vector3.Distance(transform.position, ClosestEnemy.transform.position) <= AttackRadius)
             if (Physics.CheckSphere(transform.position, AttackRadius, EnemyLayer))
             {
                 Agent.ResetPath();
@@ -139,6 +140,13 @@ public class Shooter : MonoBehaviour // компонент дл€ стрелков-лучников; как вра
         if (ClosestEnemy == null)
         {
             IsAttacking = false;
+            return;
+        }
+        //if (Vector3.Distance(transform.position, ClosestEnemy.transform.position) > AttackRadius)
+        if (!Physics.CheckSphere(transform.position, AttackRadius, EnemyLayer))
+        {
+            IsAttacking = false;
+            Debug.Log("ѕротивник слишком далеко");
             return;
         }
         GameObject Missile = Instantiate(MissilePrefab, ArrowSpawner.position, transform.rotation);
