@@ -26,7 +26,7 @@ public class TreeDrawer : MonoBehaviour // компонент для отрисовки моделек дерев
         // отрисовка деревьев слева от поля
         for (float i = -1; i <= Y + 1; i += 2)
         {
-            Vector3 Pos = new Vector3(-3, 0, i);
+            Vector3 Pos = new Vector3(-2, 0, i);
             Matrix4x4 Matrix = Matrix4x4.TRS(Pos, Rot, Scale);
 
             Graphics.DrawMesh(Mesh, Matrix, Material, 0);
@@ -35,7 +35,7 @@ public class TreeDrawer : MonoBehaviour // компонент для отрисовки моделек дерев
         // отрисовка деревьев спереди поля
         for (float i = -2; i <= X + 1; i += 2)
         {
-            Vector3 Pos = new Vector3(i, 0, Y + 2);
+            Vector3 Pos = new Vector3(i, 0, Y + 1);
             Matrix4x4 Matrix = Matrix4x4.TRS(Pos, Rot, Scale);
 
             Graphics.DrawMesh(Mesh, Matrix, Material, 0);
@@ -44,7 +44,7 @@ public class TreeDrawer : MonoBehaviour // компонент для отрисовки моделек дерев
         // отрисовка деревьев справа от поля
         for (float i = -1; i <= Y + 1; i += 2)
         {
-            Vector3 Pos = new Vector3(X + 2, 0, i);
+            Vector3 Pos = new Vector3(X + 1, 0, i);
             Matrix4x4 Matrix = Matrix4x4.TRS(Pos, Rot, Scale);
 
             Graphics.DrawMesh(Mesh, Matrix, Material, 0);
@@ -53,7 +53,7 @@ public class TreeDrawer : MonoBehaviour // компонент для отрисовки моделек дерев
         // отрисовка деревьев сзади поля
         for (float i = -2; i <= X + 1; i += 2)
         {
-            Vector3 Pos = new Vector3(i, 0, -3);
+            Vector3 Pos = new Vector3(i, 0, -2);
             Matrix4x4 Matrix = Matrix4x4.TRS(Pos, Rot, Scale);
 
             Graphics.DrawMesh(Mesh, Matrix, Material, 0);

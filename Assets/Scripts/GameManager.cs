@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour // компонент, отвечающий за игровую лог
     [SerializeField] GameObject CloseButton; // кнопка, чтобы скрыть кнопку спавна юнита
     [SerializeField] GameObject[] UnitButtons; // кнопки спавна юнитов;
     private GameObject UnitButton; // кнопка выбранного здания, которое спавнит юнитов; выявляется из списка UnitButtons по индексу из компонента UnitSpawner у выбранного здания
-    
+
     [Space]
     [SerializeField] private TextMeshProUGUI MoneyText; // счётчик монет
     [SerializeField] private TextMeshProUGUI FoodText; // счётчик еды
@@ -79,6 +79,9 @@ public class GameManager : MonoBehaviour // компонент, отвечающий за игровую лог
     [SerializeField] GameObject EndPanel; // конечная панель
     [Space]
     [SerializeField] GameObject NextLevelButton; // кнопка для перехода на следующий уровень
+    [Space]
+    [Space]
+    [SerializeField] GameObject MessageBox;
     [Space]
     [Space]
     // UI виджеты для настроек
@@ -207,7 +210,7 @@ public class GameManager : MonoBehaviour // компонент, отвечающий за игровую лог
             WaveText.SetActive(true);
             WaveText.GetComponent<TextMeshProUGUI>().text = $"отражено волн: <color=#CD3C19>{WI}</color>";
         }
-
+        EM.StopWaves();
         Debug.Log("Игра окончена. Поражение.");
         Invoke("APGO", 4);
     }
@@ -449,6 +452,7 @@ public class GameManager : MonoBehaviour // компонент, отвечающий за игровую лог
         }
         else
         {
+            OpenMB("Недостаточно монет для установки здания.");
             SoundSource.PlayOneShot(ErrorBuilding);
             return;
         }
@@ -547,7 +551,17 @@ public class GameManager : MonoBehaviour // компонент, отвечающий за игровую лог
 
 
 
+    public void OpenMB(string Message)
+    {
+        MessageBox.GetComponent<TextMeshProUGUI>().text = Message;
+        MessageBox.SetActive(true);
+        Invoke("CloseMb", 3);
+    }
 
+    public void CloseMb()
+    {
+        MessageBox.SetActive(false);
+    }
     
     void UpdateCounters() // обновление игровых счётчиков
     {

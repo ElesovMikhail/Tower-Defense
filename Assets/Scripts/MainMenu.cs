@@ -39,7 +39,7 @@ public class MainMenu : MonoBehaviour // компонент для всего главного меню и его
 
     public static int AvailableLevels;
 
-    [SerializeField] private int FPSCount = 100;
+    [SerializeField] private int FPSCount = 150;
 
     private void Start()
     {

@@ -32,7 +32,7 @@ public class Shooter : MonoBehaviour // компонент для стрелков-лучников; как вра
     [SerializeField] public GameObject ClosestEnemy;
 
     private Animator Anim;
-    // скрипт для лучника почти полностью скопирован со скрипта компонента Warrior, поэтому я не вижу смысла повторно подробно описывать его алгоритм
+    // скрипт для лучника почти полностью идентичен скрипту компонента Warrior, поэтому я не вижу смысла повторно подробно описывать его алгоритм
     void Awake()
     {
         ArrowSpawner = transform.GetChild(0);

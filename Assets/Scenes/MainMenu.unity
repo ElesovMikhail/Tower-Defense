@@ -2634,7 +2634,7 @@ MonoBehaviour:
   - {fileID: 1349427663}
   - {fileID: 855183191}
   - {fileID: 1299132209}
-  FPSCount: 100
+  FPSCount: 150
 --- !u!114 &549728060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10306,7 +10306,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mikhail Elesov, 2026
+  m_text: Mikhail Elesov & Novatik, 2026
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2fb56a0212b235b409345dd8b52cec2a, type: 2}
   m_sharedMaterial: {fileID: 7574753614390540703, guid: 2fb56a0212b235b409345dd8b52cec2a, type: 2}

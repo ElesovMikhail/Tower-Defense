@@ -36,6 +36,7 @@ public class UnitSpawner : MonoBehaviour // компонент для зданий, которые спавня
         if (GM.CurrentFood >= GM.MaxFood)
         {
             GM.PlaySound(GM.ErrorBuilding);
+            GM.OpenMB("Недостаточно еды. Нужны фермы.");
             return;
         }
         if (NeedHorses == true)
@@ -43,6 +44,7 @@ public class UnitSpawner : MonoBehaviour // компонент для зданий, которые спавня
             if (GM.HasHorses == false)
             {
                 GM.PlaySound(GM.ErrorBuilding);
+                GM.OpenMB("Нет лошадей. нужен хлев.");
                 return;
             }
         }

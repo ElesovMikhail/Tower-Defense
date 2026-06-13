@@ -171,6 +171,13 @@ public class EnemyManager : MonoBehaviour // компонент управления волнами против
         StartCoroutine(StartWave());
     }
 
+    public void StopWaves() // метод, прерывающий корутину StartWave и выключает компонент; нужен, чтобы противники после поражения перестали появляться
+    {
+        StopAllCoroutines();
+        Debug.Log("Корутина остановлена");
+        enabled = false;
+    }
+
     public void CreateStartWaves() // метод создания начальных волн; запускается компонентом GameManager в начале игры
     {
         CreateWaves(WaveIndex, WavesCount);
